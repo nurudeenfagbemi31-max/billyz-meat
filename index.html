@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billyz Meats | Fresh Cow, Ram, Goat & Chicken - Delivery in Lagos</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#222;overflow-x:hidden}
+a{text-decoration:none}
+:root{--green:#0A5C26;--green2:#0E7A3E;--light:#EAF7EE;--gold:#FFC107;--red:#E53935}
+
+/* NAV */
+.navbar{background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 5%;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+.logo{font-size:26px;font-weight:900;color:var(--green);letter-spacing:1px}
+.logo span{color:var(--red)}
+.logo small{display:block;font-size:11px;letter-spacing:3px;color:#777;font-weight:700}
+.navlink{display:flex;gap:25px;list-style:none}
+.navlink a{color:#222;font-weight:bold;font-size:14px}
+.navlink a:hover{color:var(--green)}
+.nav-btn{background:var(--green);color:#fff;padding:10px 18px;border-radius:30px;font-weight:bold;font-size:14px}
+.hamburger{display:none;font-size:28px;cursor:pointer}
+
+/* HERO */
+.hero{margin-top:68px;background:var(--green);color:#fff;display:grid;grid-template-columns:1.1fr 1fr;padding:50px 5%;align-items:center;gap:30px;position:relative;overflow:hidden}
+.hero-badge{background:#fff;color:var(--green);display:inline-block;padding:6px 14px;border-radius:30px;font-size:12px;font-weight:bold}
+.hero h1{font-size:46px;line-height:1.1;margin:15px 0}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:16px;line-height:1.6;opacity:.95}
+.hero-btns{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--green);padding:14px 24px;border-radius:30px;font-weight:bold}
+.btn-gold{background:var(--gold);color:#000;padding:14px 24px;border-radius:30px;font-weight:bold}
+.hero-stats{display:flex;gap:25px;margin-top:25px;flex-wrap:wrap}
+.hero-stats b{font-size:20px;display:block}
+.hero-stats span{font-size:12px;opacity:.9}
+.hero-img{border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.3);background:#fff}
+.hero-img img{width:100%;height:340px;object-fit:cover;display:block}
+
+/* TRUST BAR */
+.trust{background:var(--gold);display:grid;grid-template-columns:repeat(4,1fr);padding:16px 5%;text-align:center;font-weight:bold;font-size:13px;color:#000}
+
+/* SECTION */
+.section-head{text-align:center;padding:50px 5% 10px}
+.section-head span{color:var(--green);letter-spacing:3px;font-weight:bold;font-size:12px}
+.section-head h2{font-size:32px;margin:8px 0}
+.section-head p{color:#777}
+.gold-line{width:70px;height:4px;background:var(--green);margin:12px auto;border-radius:2px}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:20px 5% 50px}
+.card{background:#fff;border:1px solid #eee;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.06);transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--green)}
+.card img{width:100%;height:190px;object-fit:cover}
+.card-body{padding:16px}
+.card-body h3{font-size:18px}
+.card-body p{color:#777;font-size:13px;line-height:1.5;margin:8px 0}
+.price{color:var(--green);font-weight:900;font-size:18px}
+.price small{color:#888;font-size:12px;font-weight:400}
+.order-btn{display:block;margin-top:12px;background:var(--green);color:#fff;text-align:center;padding:12px;border-radius:30px;font-weight:bold;font-size:14px}
+.order-btn:hover{background:#083d1a}
+.badge{display:inline-block;background:#EAF7EE;color:var(--green);font-size:11px;font-weight:bold;padding:5px 10px;border-radius:20px;margin-bottom:8px}
+
+/* HOW TO ORDER */
+.how{background:var(--light);padding:10px 5% 50px}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:25px auto 0}
+.how-card{background:#fff;padding:28px 20px;border-radius:16px;text-align:center;border:1px solid #e0f0e5}
+.how-card div{width:55px;height:55px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;margin:0 auto 12px}
+.how-card p{color:#777;font-size:13px;line-height:1.6;margin-top:8px}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:20px 5% 50px}
+.why-card{background:#fff;border:1px solid #eee;border-radius:14px;padding:22px;text-align:center}
+.why-card h3{margin:10px 0 8px}
+.why-card p{color:#777;font-size:13px;line-height:1.6}
+
+/* ORDER FORM */
+.order-section{background:var(--green);color:#fff;padding:50px 5%;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.order-section h2{font-size:30px;line-height:1.2}
+.order-section p{opacity:.9;margin:10px 0;line-height:1.6}
+.order-form{background:#fff;color:#222;padding:22px;border-radius:16px}
+.order-form label{font-size:13px;font-weight:bold;display:block;margin-top:12px}
+.order-form select,.order-form input,.order-form textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;margin-top:6px;font-size:14px}
+.order-form button{width:100%;margin-top:16px;background:#25D366;color:#fff;border:none;padding:14px;border-radius:30px;font-weight:bold;font-size:16px;cursor:pointer}
+
+/* TESTIMONIALS */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:20px 5% 50px}
+.test{background:#F9F9F9;padding:20px;border-radius:14px;border-left:4px solid var(--green)}
+.test p{font-size:14px;line-height:1.6;color:#444}
+.test b{display:block;margin-top:12px;color:var(--green)}
+
+/* FOOTER */
+.footer{background:#062d13;color:#fff;padding:40px 5% 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+.footer h4{color:var(--gold);margin-bottom:12px}
+.footer p,.footer a{color:#ddd;font-size:14px;line-height:1.7}
+.footer a{display:block;margin:6px 0}
+.footer-bottom{text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);color:#aaa;font-size:13px}
+.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:30px;font-weight:bold;z-index:999;box-shadow:0 5px 20px rgba(0,0,0,.3);font-size:14px}
+
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.how-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:repeat(2,1fr)}.test-grid{grid-template-columns:1fr}.order-section{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.trust{grid-template-columns:repeat(2,1fr);gap:10px}.footer-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:34px}}
+@media(max-width:600px){
+.hamburger{display:block}
+.navlink{display:none;flex-direction:column;position:absolute;top:68px;left:0;background:#fff;width:100%;padding:20px;text-align:center;gap:18px;box-shadow:0 5px 15px rgba(0,0,0,.1)}
+.navlink.show{display:flex}
+.nav-btn{display:none}
+.products{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="#" class="logo">BILLYZ <span>MEATS</span><small>FRESH • CLEAN • FAST</small></a>
+  <ul class="navlink" id="navlink">
+    <li><a href="#products">Meats</a></li>
+    <li><a href="#how">How To Order</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#about">About Us</a></li>
+  </ul>
+  <a href="https://wa.me/2347030529956?text=Hi%20Billyz,%20I%20want%20to%20order%20fresh%20meat" class="nav-btn">Order Now</a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+
+<section class="hero">
+  <div>
+    <span class="hero-badge">📍 DELIVERY AROUND LAGOS • SAME DAY</span>
+    <h1>Fresh Meat,<br>Delivered To<br><span>Your Doorstep.</span></h1>
+    <p>Cow, Ram, Goat & Chicken — killed fresh, washed clean, cut as you like. No stress, no market wahala.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-white">View Meats & Prices →</a>
+      <a href="https://wa.me/2347030529956?text=Hi%20Billyz,%20I%20want%20to%20order%20fresh%20meat" class="btn-gold">Order on WhatsApp</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>500+</b><span>Happy Customers</span></div>
+      <div><b>Same Day</b><span>Delivery in Lagos</span></div>
+      <div><b>100%</b><span>Fresh & Clean</span></div>
+    </div>
+  </div>
+  <div class="hero-img"><img src="images.jpg" alt="Fresh Meat"></div>
+</section>
+
+<div class="trust">
+  <div>✅ 100% Fresh</div>
+  <div>🧼 Neatly Washed</div>
+  <div>🚚 Fast Lagos Delivery</div>
+  <div>💰 Fair Prices</div>
+</div>
+
+<div class="section-head" id="products">
+  <span>OUR MEATS</span>
+  <h2>What Do You Want Today?</h2>
+  <p>Choose your meat, choose your cut, we deliver.</p>
+  <div class="gold-line"></div>
+</div>
+
+<div class="products">
+  <div class="card"><img src="images1.jpg" alt="Cow"><div class="card-body"><span class="badge">BEST SELLER</span><h3>Cow Meat (Beef)</h3><p>Fresh beef, soft & clean. Available in full, half, quarter or by kg.</p><div class="price">From ₦6,500 <small>/ kg</small></div><a class="order-btn" href="https://wa.me/2347030529956?text=Hi,%20I%20want%20to%20order%20Cow%20Meat">Order Cow Meat</a></div></div>
+  <div class="card"><img src="images2.jpg" alt="Ram"><div class="card-body"><span class="badge">FOR SALLAH & PARTY</span><h3>Ram Meat</h3><p>Fresh ram meat, perfect for Sallah, party & soup. Full ram also available.</p><div class="price">From ₦7,500 <small>/ kg</small></div><a class="order-btn" href="https://wa.me/2347030529956?text=Hi,%20I%20want%20to%20order%20Ram%20Meat">Order Ram Meat</a></div></div>
+  <div class="card"><img src="images3.jpg" alt="Goat "><div class="card-body"><span class="badge">MOST LOVED</span><h3>Goat Meat</h3><p>Original goat meat with skin. Sweet for pepper soup & asun.</p><div class="price">From ₦7,000 <small>/ kg</small></div><a class="order-btn" href="https://wa.me/2347030529956?text=Hi,%20I%20want%20to%20order%20Goat%20Meat">Order Goat Meat</a></div></div>
+  <div class="card"><img src="images4.jpg" alt="Chicken"><div class="card-body"><span class="badge">ALWAYS AVAILABLE</span><h3>Chicken (Broiler / Local)</h3><p>Full chicken, cut-up or live. Cleaned & ready to cook.</p><div class="price">From ₦9,500 <small>/ full chicken</small></div><a class="order-btn" href="https://wa.me/2347030529956?text=Hi,%20I%20want%20to%20order%20Chicken">Order Chicken</a></div></div>
+</div>
+
+<section class="how" id="how">
+  <div class="section-head"><span>SIMPLE PROCESS</span><h2>How To Order In 3 Steps</h2><div class="gold-line"></div></div>
+  <div class="how-grid">
+    <div class="how-card"><div>1</div><h3>Pick Your Meat</h3><p>Choose cow, ram, goat or chicken. Tell us kg or full/half.</p></div>
+    <div class="how-card"><div>2</div><h3>Chat On WhatsApp</h3><p>Send your order & location. We confirm price & delivery time.</p></div>
+    <div class="how-card"><div>3</div><h3>We Deliver</h3><p>Fresh meat arrives at your doorstep, you pay on delivery or transfer.</p></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-head"><span>WHY BILLYZ?</span><h2>Why Lagos Trusts Us</h2><div class="gold-line"></div></div>
+  <div class="why-grid">
+    <div class="why-card"><div style="font-size:30px">🥩</div><h3>Fresh Everyday</h3><p>We kill fresh daily. No old meat, no frozen wahala.</p></div>
+    <div class="why-card"><div style="font-size:30px">🧼</div><h3>Neat & Clean</h3><p>Well washed, well packaged. You go see am yourself.</p></div>
+    <div class="why-card"><div style="font-size:30px">🚚</div><h3>Fast Delivery</h3><p>Ipaja, Ikeja, Lekki, Ajah, Surulere — we cover all Lagos.</p></div>
+    <div class="why-card"><div style="font-size:30px">💰</div><h3>Fair Price</h3><p>Market price, no cheating. You get full value for your money.</p></div>
+  </div>
+</section>
+
+<section class="order-section" id="order">
+  <div>
+    <h2>Order Fresh Meat<br>For Today or Weekend.</h2>
+    <p>Party? Sallah? Monthly stock? Tell us wetin you need, we go arrange am sharp sharp.</p>
+    <p>📍 <b>Location:</b> Ipaja, Lagos — Delivery around Lagos</p>
+    <p>📞 <b>Call / WhatsApp:</b> 0703 052 9956</p>
+    <p>🕒 <b>Open:</b> Mon - Sun, 7am - 8pm</p>
+  </div>
+  <form class="order-form" onsubmit="orderWhatsApp(event)">
+    <h3>Quick Order Form</h3>
+    <label>Which Meat?</label>
+    <select id="meat"><option>Cow Meat</option><option>Ram Meat</option><option>Goat Meat</option><option>Chicken</option><option>Full Cow / Ram / Goat (Sharing)</option></select>
+    <label>How Many Kg / Quantity?</label>
+    <input type="text" id="qty" placeholder="e.g. 5kg, Half Goat, 2 Full Chicken" required>
+    <label>Your Name</label>
+    <input type="text" id="name" placeholder="Your name" required>
+    <label>Delivery Location in Lagos</label>
+    <input type="text" id="location" placeholder="e.g. Ipaja, Ikeja, Lekki" required>
+    <button type="submit">Send Order on WhatsApp →</button>
+  </form>
+</section>
+
+<section>
+  <div class="section-head"><span>REVIEWS</span><h2>What Customers Say</h2><div class="gold-line"></div></div>
+  <div class="test-grid">
+    <div class="test"><p>"The goat meat was so fresh and clean. I no need wash am again. Delivery come on time too."</p><b>— Mrs. Adebayo, Ikeja</b></div>
+    <div class="test"><p>"I ordered full ram for Sallah. Billyz deliver am sharp, price good. I go order again."</p><b>— Mr. Ibrahim, Ipaja</b></div>
+    <div class="test"><p>"Best chicken plug in Lagos. Neat, fresh and affordable. My stew sweet pass normal."</p><b>— Chioma, Lekki</b></div>
+  </div>
+</section>
+
+<footer class="footer" id="about">
+  <div class="footer-grid">
+    <div><h4>ABOUT BILLYZ MEATS</h4><p>Billyz Meats is your trusted plug for fresh cow, ram, goat and chicken in Lagos. We buy healthy animals, process them cleanly, and deliver fresh meat to your doorstep — same day.</p><p>Safe Meat, Happy Home!</p></div>
+    <div><h4>Quick Links</h4><a href="#products">Our Meats</a><a href="#how">How To Order</a><a href="#order">Order Now</a><a href="https://wa.me/2347030529956">Contact</a></div>
+    <div><h4>Contact Us</h4><p>📍 30 Atan-Nla, Ipaja, Lagos</p><p>📞 0703 052 9956</p><p>✉️ billyzmeats@gmail.com</p><p>🕒 Mon - Sun, 7am - 8pm</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Billyz Meats. All rights reserved. | Fresh Meat, Delivered in Lagos</p></div>
+</footer>
+
+<a href="https://wa.me/2347030529956?text=Hi%20Billyz,%20I%20want%20to%20order%20fresh%20meat" class="whatsapp-float">💬 Order on WhatsApp</a>
+
+<script>
+function toggleMenu(){document.getElementById('navlink').classList.toggle('show')}
+function orderWhatsApp(e){
+  e.preventDefault();
+  var meat=document.getElementById('meat').value;
+  var qty=document.getElementById('qty').value;
+  var name=document.getElementById('name').value;
+  var loc=document.getElementById('location').value;
+  var msg="Hi Billyz! I want to order:%0A%0AMeat: "+meat+"%0AQuantity: "+qty+"%0AName: "+name+"%0ALocation: "+loc;
+  window.open("https://wa.me/2347030529956?text="+msg,"_blank");
+}
+</script>
+</body>
+</html>
